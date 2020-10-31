@@ -1,0 +1,62 @@
+{% extends 'basic.html' %}
+{% block title %}
+Notes
+{% endblock title %}
+{% block body %}
+
+
+<div class="container mt-3 ">
+  <nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item active" aria-current="page" style="color: #29539b;"> Welcome {{request.user}} &nbsp; &nbsp; </li>
+
+    <div class="btn-groupIml-3">
+    <button type="button" class="btn btn-dark dropdown-toggle" data-toggle="dropdown" aria_haspopup="true" aria-expanded="true"> Add Note</button>
+    <div class="dropdown-menu">
+      <a class="dropdown-item" href="/">Home</a>
+      <a class="dropdown-item" href="/addpost">Add Note</a>
+
+    </div>
+
+
+
+
+
+    </div>
+    
+  </ol>
+</nav>
+</div>
+
+
+{% for post in posts reversed %}
+{% load static %}
+
+
+  <div class="container mt-2">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-body"style="background-color: #7f5a83;
+      background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+      ">
+        <div class="card-title">
+          <h6 class="text-center" style="color: white;">Title : {{post.title}}</h6>
+        </div>
+        <p class="card-text" style="color: white;">{{post.content}}</p>
+        <hr>
+      <p style="color: white;">
+      <b style="color: white;">Posted by : </b>{{post.author}} at {{post.timeStamp}}</p>
+    
+        
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<br>
+<br>
+<br>
+
+{% endfor %}
+
+{% endblock body %}

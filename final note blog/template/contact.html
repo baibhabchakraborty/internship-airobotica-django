@@ -1,0 +1,71 @@
+{% extends 'basic.html' %}
+{% block title %}
+Contact Us!
+{% endblock title %}
+{% block body %}
+<marquee behavior="" direction="">CONTACT TO THE WEBSITE ADMIN</marquee>
+ <div class="container mt-4">
+        <div class="row">
+
+            <div class="col-md-3"></div>
+            <div class="col-md-6">
+
+
+                <div class="row">
+                    <div class="col-md-2">
+
+
+                    </div>
+
+                    <div class="col-md-10">
+                        <div class="card mt-4">
+                  
+
+
+                            <h4 class="text-center">CONTACT US</h4>
+                            <div class="card-body">
+
+                                <form action="/contact" method="post">{% csrf_token %}
+
+                                    <div class="form-group">
+                                        <label for="fullname">FULL NAME</label>
+                                        <input type="text" class="form-control" name="fullname" id="fullname" required>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="email">EMAIL ADDRESS</label>
+                                        <input type="email" class="form-control" name="email" id="email" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="num">PHONE NUMBER</label>
+                                        <input type="number" class="form-control" name="num" id="num" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="desc">DESCRIPTION</label>
+                                        <textarea class="form-control" name="desc" id="desc" rows="2" required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success btn-sm btn-block">Submit</button>
+
+                                </form>
+
+
+                       
+                               
+                            </div>
+
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+    {% endblock body %}
